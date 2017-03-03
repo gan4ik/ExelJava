@@ -28,6 +28,8 @@ public class styles {
 		//style.setFillBackgroundColor(IndexedColors.GREEN.getIndex());	
 		style.setAlignment(CellStyle.ALIGN_CENTER);
 		style.setVerticalAlignment(CellStyle.VERTICAL_TOP);
+		style.setBorderBottom(CellStyle.BORDER_DASH_DOT);
+		style.setBottomBorderColor(IndexedColors.GREEN.getIndex());
 	
 		
 		Font font = wb.createFont();
