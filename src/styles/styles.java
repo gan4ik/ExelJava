@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -24,8 +25,22 @@ public class styles {
 		CellStyle style = wb.createCellStyle();
 		style.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-		style.setFillBackgroundColor(IndexedColors.GREEN.getIndex());
+		//style.setFillBackgroundColor(IndexedColors.GREEN.getIndex());	
+		style.setAlignment(CellStyle.ALIGN_CENTER);
+		style.setVerticalAlignment(CellStyle.VERTICAL_TOP);
+	
 		
+		Font font = wb.createFont();
+		font.setFontName("Courier New");
+		font.setFontHeightInPoints((short) 15);	
+		font.setBold(true);
+		font.setStrikeout(true);
+		font.setUnderline(Font.U_SINGLE);
+		font.setColor(IndexedColors.RED.getIndex());
+		
+		style.setFont(font);
+		
+		cell0.setCellStyle(style);
 		
         FileOutputStream fos = new FileOutputStream("C:/Users/GannIV.GU.003/workspace/JavaExel/styles.xls");
 		
