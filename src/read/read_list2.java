@@ -3,9 +3,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-import javax.imageio.stream.FileImageInputStream;
-import javax.naming.spi.DirStateFactory.Result;
-
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -19,7 +16,7 @@ public class read_list2 {
 
 	public static void main(String[] args) throws IOException {
 		
-		FileInputStream fis = new FileInputStream("C:/Users/GannIV.GU.003/workspace/JavaExel/read.xls");
+		FileInputStream fis = new FileInputStream("C:/scripts/ОП Московское.xls");
 		Workbook wb = new HSSFWorkbook(fis);
 		/*
 		String result = wb.getSheetAt(0).getRow(0).getCell(0).getStringCellValue();
@@ -35,7 +32,7 @@ public class read_list2 {
 				
 				CellReference cellRef = new CellReference(row.getRowNum(), cell.getColumnIndex());
 	            System.out.print(cellRef.formatAsString());
-	            System.out.print(" - ");
+	            //System.out.print(" - ");
 				
 	            System.out.println(getCellText(cell));
 			
